@@ -8,19 +8,26 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/linear_menu"
         android:layout_width="match_parent"
-        android:padding="8dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:background="@color/purple"
         android:layout_height="wrap_content">
 
         <ImageView
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="40dp"
+            app:tint="@color/white"
             android:src="@drawable/ic_all_inclusive"/>
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="40dp"
+            app:tint="@color/dark_purple"
             android:layout_weight="1"
             android:src="@drawable/ic_happy"/>
 
@@ -28,15 +35,30 @@
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
+            app:tint="@color/dark_purple"
             android:src="@drawable/ic_sunny"/>
 
     </LinearLayout>
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Ola Kotlin"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:fontFamily="@font/cabin_medium"
+        android:layout_below="@+id/linear_menu"
+        android:layout_marginTop="32dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
         android:id="@+id/text_phrase"
         android:layout_width="match_parent"
         android:layout_centerInParent="true"
-        android:text="Motivation Motivation Motivation"
+        android:text="@string/app_name"
+        android:textSize="22sp"
+        android:fontFamily="@font/cabin_medium"
+        android:textColor="@color/black"
         android:padding="16dp"
         android:gravity="center"
         android:layout_height="wrap_content"/>
@@ -44,16 +66,21 @@
     <View
         android:layout_width="128dp"
         android:background="@color/black"
+        android:backgroundTint="@color/dark_purple"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/text_phrase"
-        android:layout_height="5dp"/>
-    
+        android:elevation="5dp"
+        android:layout_height="3dp"/>
+
     <Button
+        android:id="@+id/button_new_phrase"
         android:layout_width="wrap_content"
-        android:text="@string/new_phrase"
-        android:layout_marginBottom="32dp"
-        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_height="wrap_content"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/cabin_medium"
+        android:backgroundTint="@color/dark_purple"
+        android:text="@string/new_phrase" />
 
 </RelativeLayout>
