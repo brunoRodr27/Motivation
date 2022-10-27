@@ -1,5 +1,6 @@
 package com.example.motivation
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -23,6 +24,16 @@ class UserActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(view: View) {
-        Toast.makeText(this,"OK", Toast.LENGTH_SHORT).show()
+        handleSave()
+    }
+
+    private fun handleSave() {
+        val name = binding.editName.text.toString()
+        if (name != ""){
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        } else {
+            Toast.makeText(this, R.string.validation_mandatory_name, Toast.LENGTH_SHORT).show()
+        }
     }
 }
